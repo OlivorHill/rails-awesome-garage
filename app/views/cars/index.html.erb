@@ -1,0 +1,11 @@
+<h1>Display all Cars</h1>
+
+<% @cars.each do | car | %>
+
+<%= link_to "#{car.owner.nickname}'s #{car.brand} #{car.model}", car_path(car) %> <br>
+  <%= "Brand: #{car.brand} | " %>
+  <%= "Model: #{car.model} | " %>
+  <%= "Year: #{car.year} | " %>
+  <%= "Fuel: #{car.fuel}" %>
+  <hr>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Show single car here</h1>
+
+<%= "Owner: #{@car.owner.nickname}" %> <br>
+<%= "Brand: #{@car.brand}" %> <br>
+<%= "Model: #{@car.model}" %> <br>
+<%= "Year: #{@car.year}" %> <br>
+<%= "Fuel Type: #{@car.fuel}" %>
+
+<%= simple_form_for [ @car, @review ] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating, collection: 0..5 %>
+  <%= f.submit :submit %>
+<% end %>
+
+<% @car.reviews.each do | review | %>
+<hr>
+<%= review.comment %> <br>
+<strong> <%= "Rating: #{review.rating}⭐️" %> </strong>
+<% end %>
+
+
+<%= simple_form_for [ @car, @favourite ] do |f| %>
+  <%= f.input :car_id, collection: @cars, as: :select %>
+<% end %>
