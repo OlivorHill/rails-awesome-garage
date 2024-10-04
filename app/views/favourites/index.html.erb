@@ -1,0 +1,12 @@
+<h1>My Garage</h1>
+
+<% @favourites.each do | favourite | %>
+<p>Brand:<%= favourite.car.brand %></p>
+<p>Model:<%= favourite.car.model %></p>
+<p>Year:<%= favourite.car.year %></p>
+<p>Fuel-type:<%= favourite.car.fuel %></p>
+<%= link_to "Remove from Garage", favourite_path(favourite), data: { turbo_method: :delete } %>
+<hr>
+<% end %>
+
+<%= link_to "Back to all cars", cars_path %>

@@ -1,24 +1,41 @@
 <h1>Show single car here</h1>
 
-<%= "Owner: #{@car.owner.nickname}" %> <br>
+<div class="container">
+  <%= "Owner: #{@car.owner.nickname}" %> <br>
 <%= "Brand: #{@car.brand}" %> <br>
 <%= "Model: #{@car.model}" %> <br>
 <%= "Year: #{@car.year}" %> <br>
 <%= "Fuel Type: #{@car.fuel}" %>
+</div>
 
-<%= simple_form_for [ @car, @review ] do |f| %>
+<div class="container">
+  <%= simple_form_for [ @car, @review ] do |f| %>
   <%= f.input :comment %>
   <%= f.input :rating, collection: 0..5 %>
   <%= f.submit :submit %>
-<% end %>
+  <% end %>
+</div>
 
-<% @car.reviews.each do | review | %>
-<hr>
-<%= review.comment %> <br>
-<strong> <%= "Rating: #{review.rating}⭐️" %> </strong>
-<% end %>
+<div class="container">
+  <% @car.reviews.each do | review | %>
+    <hr>
+    <%= review.comment %> <br>
+    <strong> <%= "Rating: #{review.rating}⭐️" %> </strong>
+  <% end %>
+</div>
 
+<div class="container">
+  <% if @car.favourites.empty? %>
+    <%= simple_form_for [@car, Favourite.new] do |f| %>
+      <%= f.submit "Add to Favourites" %>
+  <% end %>
 
-<%= simple_form_for [ @car, @favourite ] do |f| %>
-  <%= f.input :car_id, collection: @cars, as: :select %>
-<% end %>
+  <% else %>
+    <p><%= "This car has been added to your Favourites!" %></p>
+  <% end %>
+</div>
+
+<div class="container mt-8">
+  <%= link_to "Back to all cars", cars_path %> <br>
+  <%= link_to "Favourites", favourites_path %>
+</div>
