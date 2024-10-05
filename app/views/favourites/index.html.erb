@@ -1,12 +1,31 @@
-<h1>My Garage</h1>
+<div class="garage-header">
+  <h1 style=>My Garage</h1>
+</div>
 
 <% @favourites.each do | favourite | %>
-<p>Brand:<%= favourite.car.brand %></p>
-<p>Model:<%= favourite.car.model %></p>
-<p>Year:<%= favourite.car.year %></p>
-<p>Fuel-type:<%= favourite.car.fuel %></p>
-<%= link_to "Remove from Garage", favourite_path(favourite), data: { turbo_method: :delete } %>
-<hr>
-<% end %>
 
-<%= link_to "Back to all cars", cars_path %>
+  <div class="landscape-card-container">
+
+  <div class="sm-card-parent">
+    <img src="<%= favourite.car.image_url %>" alt="Image of <%= favourite.car.model %>">
+    <div class="sm-card-child">
+
+        <div class="sm-card-info">
+          <h3><%= favourite.car.brand %></h3>
+          <p><%= favourite.car.model %></p>
+        </div>
+
+        <div class="sm-card-footer">
+          <p><%= favourite.car.year %> | <%= favourite.car.fuel %></p>
+
+          <%= link_to favourite_path(favourite), data: { turbo_method: :delete } do %>
+            <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
+
+    </div>
+  </div>
+
+  </div>
+
+<% end %>

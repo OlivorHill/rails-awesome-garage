@@ -1,13 +1,23 @@
-<h1>Display all Cars</h1>
-
 <% @cars.each do | car | %>
 
-<%= link_to "#{car.owner.nickname}'s #{car.brand} #{car.model}", car_path(car) %> <br>
-  <%= "Brand: #{car.brand} | " %>
-  <%= "Model: #{car.model} | " %>
-  <%= "Year: #{car.year} | " %>
-  <%= "Fuel: #{car.fuel}" %>
-  <hr>
-<% end %>
+<div class="card-container">
 
-<%= link_to "Favourites", favourites_path %>
+    <%= link_to car_path(car) do %>
+    <div class="index-card-parent" >
+      <div class="index-card-header">
+        <h4> <%= car.brand %> </h4>
+        <p> <%= car.model %> </p>
+      </div>
+
+      <img src="<%= car.image_url %>" alt="Image of <%= car.model %>">
+
+      <div class="index-card-footer">
+        <p>Comment:</p>
+      </div>
+    </div>
+    <br>
+  <% end %>
+
+</div>
+
+<% end %>

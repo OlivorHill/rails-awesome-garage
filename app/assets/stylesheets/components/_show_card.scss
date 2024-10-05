@@ -1,0 +1,101 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card-parent {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  background-color: rgb(255, 255, 255);
+  width: 600px;
+  overflow: hidden; // Allows for the rounded corners at the top: suspected overlapping css
+  border-radius: 6px; // Only seems to apply to footer?
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.info-form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 15px;
+}
+
+.car-info {
+  h4 {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.review-form {
+  width: 60%;
+}
+
+.reviews {
+  margin: 20px 25px;
+  p {
+    margin: 0;
+  }
+}
+
+.review-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: 0;
+  }
+}
+
+.comment-text {
+  font-size: 12px;
+}
+
+.image-wrapper {
+  position: relative; /* Set the image wrapper to relative for the icon and image */
+
+  img {
+    height: 45%;
+    max-width: 100%;  /* Ensure it doesn't exceed the container's width */
+    height: auto;
+  }
+}
+
+.add-to-garage {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+.add-button {
+  font-size: 32px;
+  border: 0;
+  background: none;
+  color: aquamarine;
+  padding: 0;
+  transition: 0.2s ease-in;
+  line-height: 1;
+}
+
+.added-button {
+  font-size: 32px;
+  border: 0;
+  background: none;
+  color: #e547c8;
+  padding: 0;
+  line-height: 1;
+}
+
+.add-button:hover {
+  color: #e547c8;
+  transform: scale(1.05);
+}

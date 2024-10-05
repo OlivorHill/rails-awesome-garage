@@ -1,0 +1,75 @@
+
+.sm-card-parent {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in;
+  margin: 15px 0;
+
+  img {
+    width: 35%;
+    object-fit: cover;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.sm-card-parent:hover {
+  transform: scale(1.01);
+}
+
+.sm-card-child {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.sm-card-info {
+  h3 {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
+
+.sm-card-footer-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.sm-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    margin-bottom: 0;
+  };
+
+  i {
+    color:rgb(170, 170, 170);
+    padding-right: 30px;
+    transition: 0.2s ease-in;
+  }
+
+  i:hover {
+    color: #fe3b3b;
+    transform: scale(1.02);
+  }
+}
+
+.garage-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  margin: 15px 0;
+}
