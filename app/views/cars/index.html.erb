@@ -1,6 +1,6 @@
 <% @cars.each do | car | %>
 
-<div class="card-container">
+<div class="index-card-container">
 
     <%= link_to car_path(car) do %>
     <div class="index-card-parent" >
@@ -12,7 +12,8 @@
       <img src="<%= car.image_url %>" alt="Image of <%= car.model %>">
 
       <div class="index-card-footer">
-        <p>Comment:</p>
+        <i class="fa-regular fa-comment"></i>
+        <p>Comment</p>
       </div>
     </div>
     <br>
